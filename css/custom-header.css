@@ -1,0 +1,58 @@
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+}
+.custom-header {
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 88px;
+}
+
+
+.header-section {
+    display: flex;
+    align-items: center;
+}
+
+.header-section.left .brand-name,
+.header-section.right .brand-role {
+    margin-left: 16px;
+    color: #1D1D1D;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.header-section.left .brand-name + .brand-name {
+    margin-left: 8px;
+}
+
+.header-logo {
+    display: inline-block;
+}
+
+.header-section.center {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: 34px;
+}
+
+.header-section.center a {
+    color: #1D1D1D;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 2px 0;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.header-section.center a:hover,
+.header-section.center a:active,
+.header-section.center a:focus {
+    border-bottom: 2px solid #1D1D1D;
+}
