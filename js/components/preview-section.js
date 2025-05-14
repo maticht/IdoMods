@@ -17,7 +17,7 @@ class PreviewSection extends HTMLElement {
     const img = this.querySelector('.preview-img');
     if (!title || !img) return;
     const titleHeight = title.getBoundingClientRect().height + 42;
-    const available = window.innerHeight - 232 - titleHeight;
+    const available = window.innerHeight - 240 - titleHeight;
     img.style.height = (available > 0 ? available : 0) + 'px';
   }
 }

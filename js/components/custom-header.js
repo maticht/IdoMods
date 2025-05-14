@@ -6,13 +6,14 @@ class CustomHeader extends HTMLElement {
         <div class="header-section left">
           <a href="/" class="logo" aria-label="Перейти на главную страницу">
             <img
-              src="img/icons/ICON=Default.svg"
+              class="forma-icon"
+              src="img/icons/FORMA ICON=Default.svg"
               loading="lazy"
               width="24" height="24"
               alt="logo"
             />
+            FORMA’SINT.
           </a>
-          <span class="brand-name">FORMA’SINT.</span>
           <span class="brand-name">IDOMODS &lt;/&gt;</span>
         </div>
         <ul class="header-section center" role="menubar">
@@ -33,6 +34,15 @@ class CustomHeader extends HTMLElement {
       </nav>
     </header>
     `;
+    const icon = this.querySelector('.forma-icon');
+    if (icon) {
+      icon.addEventListener('mouseenter', () => {
+        icon.src = 'img/icons/FORMA ICON=Fill.svg';
+      });
+      icon.addEventListener('mouseleave', () => {
+        icon.src = 'img/icons/FORMA ICON=Default.svg';
+      });
+    }
   }
 }
 customElements.define('custom-header', CustomHeader);

@@ -11,7 +11,17 @@
     justify-content: space-between;
     min-height: 88px;
 }
-
+.logo{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #1D1D1D;
+}
+.logo img{
+    margin-right: 12px;
+}
 
 .header-section {
     display: flex;

@@ -102,7 +102,7 @@ class BrandsSlider extends HTMLElement {
     if (!Array.isArray(brands)) return;
     const track = this.shadowRoot.querySelector('.slider-track');
     track.innerHTML = '';
-    brands.forEach(brand => {
+    brands.map(brand => {
       const el = document.createElement('div');
       el.className = 'brand-card';
       const isFavorite = this.favorites.has(brand.id);
@@ -121,7 +121,7 @@ class BrandsSlider extends HTMLElement {
           ${brand.badge ? `<span class="badge">${brand.badge}</span>` : ''}
         </div>
         <button class="fav-btn" aria-label="Добавить в избранное" title="Добавить в избранное">
-          <img class="fav-icon" src="/img/icons/${!isFavorite ? 'FAV ICON=Default.svg' : 'FAV ICON=Fill.svg'}" alt="">
+          <img class="fav-icon" src="/img/icons/${!isFavorite ? 'FAV FORMA ICON=Default.svg' : 'FAV ICON=Fill.svg'}" alt="">
         </button>
         <div class="brand-card-info">
           <b>${brand.title}</b>
