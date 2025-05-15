@@ -70,7 +70,7 @@ class ProductList extends HTMLElement {
     this.innerHTML = `
       <div class="product-list-container">
         <div class="page-size-selector">
-          <label for="page-size" class="page-size-text">Number of products per page</label>
+          <label id="product-list" for="page-size" class="page-size-text">Number of products per page</label>
           <div id="page-size" class="custom-select ${this.dropdownOpen ? ' open' : ''}" tabindex="0">
             <div class="custom-select__selected">
               ${this.pageSize}

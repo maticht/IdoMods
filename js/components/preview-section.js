@@ -2,7 +2,7 @@ class PreviewSection extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <section class="preview-section">
-      <h1>
+      <h1 id="home">
         <img src="img/text/LOGO FORMA.svg" alt="preview" class="preview-title" />
       </h1>
       <img src="img/backgrounds/56aba026b5b193219432364aab843d25a229b4ed.jpg" alt="preview" class="preview-img" />

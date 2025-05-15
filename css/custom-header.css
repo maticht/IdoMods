@@ -18,6 +18,7 @@
     align-items: center;
     justify-content: flex-start;
     color: #1D1D1D;
+    margin-right: 32px;
 }
 .logo img{
     margin-right: 12px;
@@ -30,11 +31,12 @@
 
 .header-section.left .brand-name,
 .header-section.right .brand-role {
-    margin-left: 16px;
+    margin-left: 12px;
     color: #1D1D1D;
     font-weight: 500;
     font-size: 16px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .header-section.left .brand-name + .brand-name {

@@ -3,7 +3,6 @@ import { fetchBrands } from '../api.js';
 class BrandsSlider extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
     this.itemCount = 12;
     this.favorites = new Set();
     this.brands = [];
@@ -32,20 +31,20 @@ class BrandsSlider extends HTMLElement {
       this.updateArrows();
     } catch (e) {
       console.error('[brands-slider] Ошибка запроса:', e);
-      this.shadowRoot.querySelector('.slider-track').innerHTML =
+      this.querySelector('.slider-track').innerHTML =
         `<div>Error loading data</div>`;
     }
   }
 
   attachScrollEvent() {
-    const track = this.shadowRoot.querySelector('.slider-track');
+    const track = this.querySelector('.slider-track');
     track.addEventListener('scroll', () => this.updateArrows());
   }
 
   updateArrows() {
-    const track = this.shadowRoot.querySelector('.slider-track');
-    const btnPrev = this.shadowRoot.querySelector('.slider-btn.prev');
-    const btnNext = this.shadowRoot.querySelector('.slider-btn.next');
+    const track = this.querySelector('.slider-track');
+    const btnPrev = this.querySelector('.slider-btn.prev');
+    const btnNext = this.querySelector('.slider-btn.next');
 
     const atStart = track.scrollLeft === 0;
     const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth -20;
@@ -58,7 +57,7 @@ class BrandsSlider extends HTMLElement {
   }
 
   scrollTrack(direction) {
-    const track = this.shadowRoot.querySelector('.slider-track');
+    const track = this.querySelector('.slider-track');
     const scrollAmount = track.clientWidth + 24;
     track.scrollBy({ left: direction === 'next' ? scrollAmount : -scrollAmount, behavior: 'smooth' });
   }
@@ -73,7 +72,7 @@ class BrandsSlider extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
+    this.innerHTML = `
       <link rel="stylesheet" href="/css/brands-slider.css">
       <link rel="stylesheet" href="/css/index.css">
       <section id="brands">
@@ -94,13 +93,13 @@ class BrandsSlider extends HTMLElement {
       </section>
     `;
 
-    this.shadowRoot.querySelector('.slider-btn.prev').addEventListener('click', () => this.scrollTrack('prev'));
-    this.shadowRoot.querySelector('.slider-btn.next').addEventListener('click', () => this.scrollTrack('next'));
+    this.querySelector('.slider-btn.prev').addEventListener('click', () => this.scrollTrack('prev'));
+    this.querySelector('.slider-btn.next').addEventListener('click', () => this.scrollTrack('next'));
   }
 
   renderBrands(brands) {
     if (!Array.isArray(brands)) return;
-    const track = this.shadowRoot.querySelector('.slider-track');
+    const track = this.querySelector('.slider-track');
     track.innerHTML = '';
     brands.map(brand => {
       const el = document.createElement('div');
